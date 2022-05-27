@@ -29,7 +29,7 @@ const Header = () => {
         <Spacer />
 
         <Flex alignItems="center" gridGap={4}>
-          <Flex display={["none", "flex"]}>
+          <Flex display={"flex"}>
             <Navigation />
           </Flex>
 

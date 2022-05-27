@@ -45,7 +45,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
 
   return (
     <VStack
-      width="47rem"
+      width={[72, "47rem"]}
       alignItems="left"
       transition="0.2s ease-out"
       _hover={{
@@ -58,12 +58,13 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
     >
       <Collapse startingHeight={60} in={show} onClick={handleToggle}>
         <HStack marginBottom={8}>
-          <Image boxSize="60px" objectFit="cover" src={entry.companyLogo} />
+          <Image boxSize={16} objectFit="cover" src={entry.companyLogo} />
           <VStack alignItems="left">
-            <Heading size="md">
+            <Heading size="md" fontSize={[13, 20]}>
               {entry.companyName}
               {entry.present && (
                 <Badge
+                  fontSize={[11, 20]}
                   variant="outline"
                   marginLeft={2}
                   paddingLeft={1}
@@ -74,12 +75,14 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
                 </Badge>
               )}
             </Heading>
-            <Heading size="sm" fontStyle={"italic"}>
+            <Heading size="sm" fontStyle={"italic"} fontSize={[11, 20]}>
               {entry.position}
             </Heading>
           </VStack>
           <Spacer />
-          <Text fontStyle={"italic"}>{duration}</Text>
+          <Text display={["none", "flex"]} fontStyle={"italic"}>
+            {duration}
+          </Text>
         </HStack>
         <VStack alignItems="left" marginLeft={3} marginBottom={3}>
           <Text marginBottom={8}>{entry.description}</Text>
