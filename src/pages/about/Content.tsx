@@ -1,13 +1,12 @@
-import { Box, Divider, Flex, Spacer, VStack } from "@chakra-ui/react";
+import { Divider, Flex, Spacer, VStack } from "@chakra-ui/react";
 import { Heading, Link, Text } from "@chakra-ui/react";
-import { BsInstagram } from "react-icons/bs";
 import MotionFlex from "../../lib/motion/MotionFlex";
 import {
   additionalWorkEntries,
   educationEntries,
   workEntries,
-} from "./careerEntries";
-import { CareerList } from "./CareerList";
+} from "../../lib/career/careerEntries";
+import { CareerList } from "../../lib/career/CareerList";
 
 const Content = () => {
   return (

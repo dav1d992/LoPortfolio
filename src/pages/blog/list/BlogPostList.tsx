@@ -9,7 +9,7 @@ export type BlogPostListProps = {
 };
 
 const BlogPostList = ({ allPostsData }: BlogPostListProps) => {
-  const blogPosts = allPostsData.map((postData) => (
+  const blogPosts = allPostsData?.map((postData) => (
     <BlogPostPreview postData={postData} key={postData.title} />
   ));
 

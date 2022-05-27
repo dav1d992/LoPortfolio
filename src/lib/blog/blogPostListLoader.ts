@@ -1,8 +1,8 @@
 import type { GetStaticProps } from "next";
 
-import type { BlogPostType } from "../../../lib/types/blog";
-import { getSortedPostsData } from "../../../lib/utils/posts";
-import { BlogPostListProps } from "./BlogPostList";
+import type { BlogPostType } from "../types/blog";
+import { getSortedPostsData } from "../utils/posts";
+import { BlogPostListProps } from "../../pages/blog/list/BlogPostList";
 
 export const getStaticProps: GetStaticProps<BlogPostListProps> = async () => {
   const allPostsData = getSortedPostsData().filter(
