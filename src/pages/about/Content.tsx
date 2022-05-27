@@ -37,7 +37,7 @@ const Content = () => {
           </Text>
         </Flex>
         <Spacer />
-        <Divider width={"47rem"} />
+        <Divider />
         <VStack gap={12}>
           <Flex flexDirection={"column"} gap={2}>
             <Heading size="lg">Education</Heading>

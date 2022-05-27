@@ -29,7 +29,12 @@ const Welcome = () => {
       initial="before"
       animate="after"
     >
-      <Box height="60vh" alignItems="center" display="grid" w={"60rem"}>
+      <Box
+        height="60vh"
+        alignItems="center"
+        display="grid"
+        w={["18rem", "60rem"]}
+      >
         <Box
           verticalAlign="center"
           width={["100%", "80%", "60%"]}
