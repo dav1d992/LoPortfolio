@@ -87,7 +87,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
           <SimpleGrid columns={2} spacingY={1}>
             {entry.techStack &&
               entry.techStack.map((tech) => (
-                <HStack>
+                <HStack key={tech}>
                   <Circle size="5px" bg="brand.500" />
                   <Text> {tech}</Text>
                 </HStack>

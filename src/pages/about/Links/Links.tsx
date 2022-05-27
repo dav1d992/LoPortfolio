@@ -5,7 +5,7 @@ import {
   socialLinks,
   staggerAnimationProps,
   wrapperAnimationProps,
-} from "./constants";
+} from "../../../lib/utils/links";
 import MotionLink from "./MotionLink";
 
 export type ContactProps = {

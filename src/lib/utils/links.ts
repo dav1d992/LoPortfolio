@@ -4,7 +4,7 @@ import {
   BsEnvelopeFill,
   BsInstagram
 } from "react-icons/bs";
-import { MotionLinkProps } from "./MotionLink";
+import { MotionLinkProps } from "../../pages/about/Links/MotionLink";
 
 export const wrapperAnimationProps = {
   variants: {

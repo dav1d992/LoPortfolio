@@ -1,7 +1,7 @@
 import type { GetStaticProps } from "next";
 
-import { getAllPostIds, getPostData } from "../../../lib/utils/posts";
-import { BlogPostProps } from "./BlogPost";
+import { getAllPostIds, getPostData } from "../utils/posts";
+import { BlogPostProps } from "../../pages/blog/post/BlogPost";
 
 export const getStaticPaths = async () => {
   const paths = getAllPostIds();

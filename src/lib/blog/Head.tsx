@@ -11,13 +11,13 @@ const BlogPostHead = ({ postData }: BlogPostHeadProps) => {
     <Flex alignItems="center" marginBottom={16}>
       <Box flexBasis={["80%"]}>
         <Heading as="h1" size="2xl" marginBottom={8}>
-          {postData.title}
+          {postData?.title}
         </Heading>
         <Link href="/about" isExternal>
           <Text>David Lo</Text>
         </Link>
 
-        <Text>{dateFormatLong(postData.date)}</Text>
+        <Text>{dateFormatLong(postData?.date)}</Text>
       </Box>
     </Flex>
   );

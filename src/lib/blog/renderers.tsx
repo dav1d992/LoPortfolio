@@ -4,7 +4,7 @@ import type { Options } from "react-markdown/lib/ast-to-react";
 
 import HeadingLink from "./HeadingLink";
 
-export const renderers: Options["components"] = {
+export const Renderers: Options["components"] = {
   code: ({ node, inline, className, children, ...props }) => {
     /** https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight */
     const match = /language-(\w+)/.exec(className || "");
@@ -36,7 +36,7 @@ export const renderers: Options["components"] = {
   link: ({ href, node }) => {
     return (
       <ChakraLink href={href} isExternal wordBreak="break-word">
-        {node.children[0].value as ReactNode}
+        {node.children[0].data as ReactNode}
       </ChakraLink>
     );
   },
@@ -60,4 +60,4 @@ export const renderers: Options["components"] = {
   ),
 };
 
-export default renderers;
+export default Renderers;

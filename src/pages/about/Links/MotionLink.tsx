@@ -2,7 +2,7 @@ import { Icon, Link, Tooltip } from "@chakra-ui/react";
 import MotionFlex from "../../../lib/motion/MotionFlex";
 import type { IconType } from "react-icons";
 
-import { childAnimationProps } from "./constants";
+import { childAnimationProps } from "../../../lib/utils/links";
 
 export type MotionLinkProps = {
   platformName: string;
