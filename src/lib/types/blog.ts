@@ -20,6 +20,6 @@ export type BlogPostType = Record<MandatoryFieldsType, string> &
     contentHtml: any;
     rawContent: any;
     description?: string;
-    thumbnail?: string;
+    imageUrl?: string;
     tags?: string[];
   };

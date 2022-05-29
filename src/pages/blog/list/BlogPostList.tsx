@@ -28,10 +28,9 @@ const BlogPostList = ({ allPostsData }: BlogPostListProps) => {
             Blog Posts
           </Heading>
           <Heading as="h3" size="md" marginBottom={2}>
-            Writing down some learnings...
+            Writing down some learnings...✍️
           </Heading>
         </Box>
-        w8 why is this section empty?
         <Grid gap={12} marginTop={12}>
           {blogPosts}
         </Grid>
