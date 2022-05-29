@@ -28,10 +28,10 @@ const Content = () => {
           </Text>
           <Text fontSize="xl">
             Outside of work, I enjoy doing the usual stuff like eating sushi,
-            play Counter Strike, <br></br> and{" "}
+            playing Counter Strike, <br></br> and{" "}
             <Link href="https://www.instagram.com/realdavidlo/" isExternal>
               <Text flexDirection={"row"} as="span" fontWeight="extrabold">
-                capture moments 📸
+                capturing moments 📸
               </Text>
             </Link>
           </Text>
