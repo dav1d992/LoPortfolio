@@ -2,7 +2,8 @@ import {
   BsLinkedin,
   BsGithub,
   BsEnvelopeFill,
-  BsInstagram
+  BsInstagram,
+  BsFillFilePersonFill,
 } from "react-icons/bs";
 import { MotionLinkProps } from "../../pages/about/Links/MotionLink";
 
@@ -68,4 +69,9 @@ export const socialLinks: Array<MotionLinkProps> = [
     url: "https://www.instagram.com/realdavidlo/",
     icon: BsInstagram,
   },
+  {
+    platformName: "CV", 
+    url: "https://drive.google.com/file/d/1zeI1lQkJuXNleAFVGIJyHoOwG1yx8ttL/view?usp=sharing",
+    icon: BsFillFilePersonFill,
+  }
 ];
