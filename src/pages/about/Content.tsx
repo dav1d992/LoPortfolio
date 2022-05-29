@@ -1,4 +1,11 @@
-import { Divider, Flex, Spacer, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  Flex,
+  HStack,
+  Spacer,
+  VStack,
+} from "@chakra-ui/react";
 import { Heading, Link, Text } from "@chakra-ui/react";
 import MotionFlex from "../../lib/motion/MotionFlex";
 import {
@@ -20,9 +27,15 @@ const Content = () => {
     >
       <VStack alignItems="left" gap={6}>
         <Flex flexDirection={"column"} gap={2}>
-          <Heading as="h1" size="xl">
-            About me
-          </Heading>
+          <HStack>
+            <Heading as="h1" size="xl">
+              About me
+            </Heading>
+            <Spacer></Spacer>
+            <Link href="https://drive.google.com/file/d/1zeI1lQkJuXNleAFVGIJyHoOwG1yx8ttL/view?usp=sharing">
+              <Button>Download CV</Button>
+            </Link>
+          </HStack>
           <Text fontSize="xl">
             I&apos;m David, currently working as a Fullstack Developer.
           </Text>
