@@ -11,6 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { asYearAndMonth, isToday } from "../utils/dateFormat";
 import { CareerEntry } from "./careerEntries";
 
 interface CareerListItemProps {
@@ -22,21 +23,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
   const [show, setShow] = useState(false);
 
   const handleToggle = () => setShow(!show);
-
-  let year = entry.endDate.getFullYear() - entry.startDate.getFullYear();
-  let month;
   let techStackHeaderText = entry.techStackHeaderText;
-
-  if (entry.endDate.getMonth() < entry.startDate.getMonth()) {
-    year--;
-    month = 12 - entry.startDate.getMonth() + entry.endDate.getMonth();
-  } else {
-    month = entry.endDate.getMonth() - entry.startDate.getMonth();
-  }
-
-  const duration = isEducation
-    ? ` ${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
-    : `${year} years, ${month} months`;
 
   if (!entry.techStackHeaderText)
     techStackHeaderText = `At ${entry.companyName} I mainly ${
@@ -81,10 +68,21 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
           </VStack>
           <Spacer />
           <Text display={["none", "flex"]} fontStyle={"italic"}>
-            {duration}
+            {isEducation
+              ? `${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
+              : asYearAndMonth(entry.startDate, entry.endDate)}
           </Text>
         </HStack>
         <VStack alignItems="left" marginLeft={3} marginBottom={3}>
+          <Text
+            fontSize={[12, 16]}
+            fontStyle={"italic"}
+          >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
+          <Text fontSize={[12, 16]} fontStyle={"italic"}>
+            {isToday(entry.endDate)
+              ? ""
+              : `To ${entry.endDate?.toLocaleDateString()}`}
+          </Text>
           <Text marginBottom={8}>{entry.description}</Text>
           <Heading size="sm">{techStackHeaderText}:</Heading>
           <SimpleGrid columns={2} spacingY={1}>

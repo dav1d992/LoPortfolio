@@ -23,7 +23,7 @@ export const workEntries: Array<CareerEntry> = [
         position: "Fullstack Software Developer",
         present: true,
         description: "During my time here @Bestseller I've grown more than I could imagine. We've not only built various products from scratch, but also managed to do so with much sparring and considerations to keep the code quality at it's highests.",
-        startDate: new Date("2020-11-30"),
+        startDate: new Date("2020-12-01"),
         techStack: ["React", "ASP.NET Core", "TypeScript", "C#", "Next.js", "Kubernetes", "Terraform", "Azure", "Kafka"]
     },
     {
@@ -33,7 +33,7 @@ export const workEntries: Array<CareerEntry> = [
         position: "Student Mentor",
         description: "As a part-time student mentor I'm helping my mentees out with homework, understanding subjects, Uni-Life or everything in between. This has improven my sense of understanding issues and providing pedagogical explanations on tough subjects.",
         present: true,
-        startDate: new Date("2021-01-30"),
+        startDate: new Date("2021-02-01"),
         techStackHeaderText: "Subjects that are usually mentioned",
         techStack: ["Software Architecture", "Software Design Patterns", "Web Development", "Object Oriented Programming", "IT Security"]
     },
@@ -69,8 +69,8 @@ export const workEntries: Array<CareerEntry> = [
         position: "Participant",
         present: false,
         description: "Three day Scrum course which consisted of lectures and exercises regarding Scrum elements. From the course I've gained basic allround knowledge of Scrum. ",
-        startDate: new Date("2018-02-01"),
-        endDate:new Date("2018-05-01"),
+        startDate: new Date("2018-03-01"),
+        endDate:new Date("2018-04-01"),
         techStackHeaderText: "Topics that were explained:",
         techStack: ["Planning", "Sprints", "Retrospective", "Refinement", "Standup", "Review", "Scrum roles"]
     }
