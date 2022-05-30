@@ -84,7 +84,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
               : `To ${entry.endDate?.toLocaleDateString()}`}
           </Text>
           <Text marginBottom={8}>{entry.description}</Text>
-          <Heading size="sm">{techStackHeaderText}:</Heading>
+          <Heading size="sm">{techStackHeaderText}</Heading>
           <SimpleGrid columns={2} spacingY={1}>
             {entry.techStack &&
               entry.techStack.map((tech) => (
