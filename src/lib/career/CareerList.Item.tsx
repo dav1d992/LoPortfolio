@@ -13,6 +13,7 @@ import {
 import React, { useState } from "react";
 import { asYearAndMonth, isToday } from "../utils/dateFormat";
 import { CareerEntry } from "./careerEntries";
+import { MdExpandLess, MdExpandMore } from "react-icons/md";
 
 interface CareerListItemProps {
   entry: CareerEntry;
@@ -32,7 +33,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
 
   return (
     <VStack
-      width={[72, "47rem"]}
+      width={["80", "3xl"]}
       alignItems="left"
       transition="0.2s ease-out"
       _hover={{
@@ -43,7 +44,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
       overflow="hidden"
       paddingRight={3}
     >
-      <Collapse startingHeight={60} in={show} onClick={handleToggle}>
+      <Collapse startingHeight={65} in={show} onClick={handleToggle}>
         <HStack marginBottom={8}>
           <Image boxSize={16} objectFit="cover" src={entry.companyLogo} />
           <VStack alignItems="left">
@@ -67,11 +68,16 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
             </Heading>
           </VStack>
           <Spacer />
-          <Text display={["none", "flex"]} fontStyle={"italic"}>
-            {isEducation
-              ? `${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
-              : asYearAndMonth(entry.startDate, entry.endDate)}
-          </Text>
+          <VStack alignItems={"flex-end"}>
+            <Text display={["none", "flex"]} fontStyle={"italic"}>
+              {isEducation
+                ? `${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
+                : asYearAndMonth(entry.startDate, entry.endDate)}
+            </Text>
+            {(show && <MdExpandLess></MdExpandLess>) || (
+              <MdExpandMore></MdExpandMore>
+            )}
+          </VStack>
         </HStack>
         <VStack alignItems="left" marginLeft={3} marginBottom={3}>
           <Text
