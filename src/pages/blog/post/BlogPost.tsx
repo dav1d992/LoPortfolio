@@ -5,7 +5,6 @@ import BlogPostHead from "../../../lib/blog/Head";
 import { Renderers } from "../../../lib/blog/Renderers";
 import MotionFlex from "../../../lib/motion/MotionFlex";
 import { BlogPostType } from "../../../lib/types/blog";
-
 import styles from "./BlogPost.module.scss";
 
 export type BlogPostProps = {

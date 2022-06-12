@@ -1,6 +1,8 @@
-import { Box, Button, Code, Flex, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, Link as ChakraLink } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 import type { Options } from "react-markdown/lib/ast-to-react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import HeadingLink from "./HeadingLink";
 
@@ -11,21 +13,14 @@ export const Renderers: Options["components"] = {
     const language = match?.[1];
     const childrenValue = String(children).replace(/\n$/, "");
     return !inline && match ? (
-      <Box width="100%">
-        <Flex alignItems="center">
-          {language && <Code>{language}</Code>}
-          <Button
-            marginLeft="auto"
-            colorScheme="green"
-            height={6}
-            padding={0}
-            fontSize={12}
-            textTransform="lowercase"
-            onClick={() => navigator.clipboard.writeText(childrenValue)}
-          >
-            Copy
-          </Button>
-        </Flex>
+      <Box marginBottom={10} marginTop={-5} width="100%">
+        <SyntaxHighlighter
+          language={language}
+          showLineNumbers={false}
+          style={dracula}
+        >
+          {childrenValue}
+        </SyntaxHighlighter>
       </Box>
     ) : (
       <code className={className} {...props}>
