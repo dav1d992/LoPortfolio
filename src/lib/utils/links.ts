@@ -70,8 +70,8 @@ export const socialLinks: Array<MotionLinkProps> = [
     icon: BsInstagram,
   },
   {
-    platformName: "CV", 
-    url: "https://drive.google.com/file/d/1zeI1lQkJuXNleAFVGIJyHoOwG1yx8ttL/view?usp=sharing",
+    platformName: "CV",
+    url: "https://drive.google.com/file/d/1jgsoFtbNqIbyqcsX7hXPaMGMDeoc66ud/view?usp=sharing",
     icon: BsFillFilePersonFill,
-  }
+  },
 ];
