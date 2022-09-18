@@ -18,28 +18,6 @@ const defaultEntryValues = {
 export const workEntries: Array<CareerEntry> = [
   {
     ...defaultEntryValues,
-    companyLogo: "https://about.bestseller.com/static/img/BESTSELLER-Logo.jpg",
-    companyName: "Bestseller",
-    position: "Fullstack Software Developer",
-    present: true,
-    description:
-      "During my time here @Bestseller I've grown more than I could imagine. We've not only built various products from scratch, but also managed to do so with much sparring and considerations to keep the code quality at it's highests.",
-    startDate: new Date("2020-12-01"),
-    techStack: [
-      "React",
-      "ASP.NET Core",
-      "TypeScript",
-      "C#",
-      "Next.js",
-      "Storybook",
-      "Kubernetes",
-      "Terraform",
-      "Azure",
-      "Kafka",
-    ],
-  },
-  {
-    ...defaultEntryValues,
     companyLogo:
       "https://www.au.dk/fileadmin/res/facebookapps/au_standard_logo.jpg",
     companyName: "Aarhus University",
@@ -55,6 +33,29 @@ export const workEntries: Array<CareerEntry> = [
       "Web Development",
       "Object Oriented Programming",
       "IT Security",
+    ],
+  },
+  {
+    ...defaultEntryValues,
+    companyLogo: "https://about.bestseller.com/static/img/BESTSELLER-Logo.jpg",
+    companyName: "Bestseller",
+    position: "Fullstack Software Developer",
+    present: false,
+    description:
+      "During my time here @Bestseller I've grown more than I could imagine. We've not only built various products from scratch, but also managed to do so with much sparring and considerations to keep the code quality at it's highests.",
+    startDate: new Date("2020-12-01"),
+    endDate: new Date("2022-07-01"),
+    techStack: [
+      "React",
+      "ASP.NET Core",
+      "TypeScript",
+      "C#",
+      "Next.js",
+      "Storybook",
+      "Kubernetes",
+      "Terraform",
+      "Azure",
+      "Kafka",
     ],
   },
   {
@@ -128,13 +129,8 @@ export const additionalWorkEntries: Array<CareerEntry> = [
       "My time at Elgiganten has improven my skills a lot within customer service, complaint handling, inventory management, responsibility taking, and decisions making independently.",
     startDate: new Date("2017-02-01"),
     endDate: new Date("2019-01-01"),
-    techStackHeaderText: "An operations worker handles", 
-    techStack: [
-      "Inventory", 
-      "Products", 
-      "Complaints",
-      "Deliveries"
-    ],
+    techStackHeaderText: "An operations worker handles",
+    techStack: ["Inventory", "Products", "Complaints", "Deliveries"],
   },
   {
     ...defaultEntryValues,
@@ -142,7 +138,8 @@ export const additionalWorkEntries: Array<CareerEntry> = [
       "data:image/png;base64,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",
     companyName: "Stofa",
     position: "Customer Service Consultant",
-    description: "Being a consultant @Stofa has taught me a lot in terms of customer service, communication, and handling complaints",
+    description:
+      "Being a consultant @Stofa has taught me a lot in terms of customer service, communication, and handling complaints",
     startDate: new Date("2016-02-01"),
     endDate: new Date("2017-01-01"),
     techStackHeaderText: " ",
@@ -156,7 +153,8 @@ export const additionalWorkEntries: Array<CareerEntry> = [
     position: "IT Support",
     startDate: new Date("2014-01-01"),
     endDate: new Date("2014-09-01"),
-    description: "Being an IT supporter @TDC has taught me a lot in terms of communication and handling complaints",
+    description:
+      "Being an IT supporter @TDC has taught me a lot in terms of communication and handling complaints",
     techStackHeaderText: " ",
     techStack: [],
   },
