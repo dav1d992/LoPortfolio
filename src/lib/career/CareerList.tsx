@@ -16,7 +16,6 @@ export const CareerList = ({
   }
   return (
     <MotionFlex
-      justifyContent="center"
       alignItems="center"
       variants={{
         before: { opacity: 0, y: 20, transition: { type: "spring" } },
@@ -25,7 +24,7 @@ export const CareerList = ({
       initial="before"
       animate="after"
     >
-      <VStack spacing={8}>
+      <VStack spacing={4}>
         {(useEducationTemplate &&
           listEntries.map((entry) => (
             <CareerListItem
