@@ -71,7 +71,8 @@ export const socialLinks: Array<MotionLinkProps> = [
   },
   {
     platformName: "CV",
-    url: "https://drive.google.com/file/d/1jgsoFtbNqIbyqcsX7hXPaMGMDeoc66ud/view?usp=sharing",
+    url: "/assets/Davids_CV_Eng.pdf",
     icon: BsFillFilePersonFill,
+    isDownload: true,
   },
 ];

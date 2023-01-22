@@ -8,17 +8,18 @@ export type MotionLinkProps = {
   platformName: string;
   url: string;
   icon: IconType;
+  isDownload?: boolean
 };
 
 const MotionLink = (props: MotionLinkProps) => {
-  const { platformName, url, icon } = props;
+  const { platformName, url, icon, isDownload } = props;
 
   const handleClickLink = () => {};
 
   return (
     <MotionFlex {...childAnimationProps}>
       <Tooltip label={platformName}>
-        <Link href={url} isExternal onClick={handleClickLink}>
+        <Link href={url} isExternal onClick={handleClickLink} download={isDownload}>
           <Icon as={icon} fontSize="2xl" />
         </Link>
       </Tooltip>
