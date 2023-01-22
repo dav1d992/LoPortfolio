@@ -71,7 +71,7 @@ export const socialLinks: Array<MotionLinkProps> = [
   },
   {
     platformName: "CV",
-    url: "/assets/Davids_CV_Eng.pdf",
+    url: "/Davids_CV_Eng.pdf",
     icon: BsFillFilePersonFill,
     isDownload: true,
   },

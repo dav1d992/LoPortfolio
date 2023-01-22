@@ -33,7 +33,7 @@ const Content = () => {
             About me
           </Heading>
           <Spacer></Spacer>
-          <Link href="/assets/Davids_CV_Eng.pdf" download>
+          <Link href="/Davids_CV_Eng.pdf" download>
             <Button>Download CV</Button>
           </Link>
         </HStack>
