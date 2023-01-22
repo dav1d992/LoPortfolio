@@ -33,7 +33,7 @@ const Content = () => {
             About me
           </Heading>
           <Spacer></Spacer>
-          <Link href="https://drive.google.com/file/d/1jgsoFtbNqIbyqcsX7hXPaMGMDeoc66ud/view?usp=sharing">
+          <Link href="/assets/Davids_CV_Eng.pdf" download>
             <Button>Download CV</Button>
           </Link>
         </HStack>
