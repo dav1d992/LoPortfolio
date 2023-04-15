@@ -58,7 +58,7 @@ const Welcome = () => {
           </HStack>
 
           <Heading as="h1" size="lg" marginBottom={2}>
-            I&apos;m David.
+            I&apos;m David Lo.
           </Heading>
           <Text fontSize="xl">
             Software developer specializing in Frontend.

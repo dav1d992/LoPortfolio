@@ -63,15 +63,15 @@ const Content = () => {
         animate="after"
       >
         <Flex flexDirection={"column"} gap={2}>
+          <Heading size="lg">Work Experience</Heading>
+          <CareerList listEntries={workEntries}></CareerList>
+        </Flex>
+        <Flex flexDirection={"column"} gap={2}>
           <Heading size="lg">Education</Heading>
           <CareerList
             useEducationTemplate
             listEntries={educationEntries}
           ></CareerList>
-        </Flex>
-        <Flex flexDirection={"column"} gap={2}>
-          <Heading size="lg">Work Experience</Heading>
-          <CareerList listEntries={workEntries}></CareerList>
         </Flex>
         <Flex flexDirection={"column"} gap={2}>
           <Heading size="lg">Additional Work Experience</Heading>

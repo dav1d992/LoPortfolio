@@ -18,13 +18,25 @@ const defaultEntryValues = {
 export const workEntries: Array<CareerEntry> = [
   {
     ...defaultEntryValues,
+    companyLogo: "/assets/dc.jpg",
+    companyName: "Danske Commodities",
+    position: "Fullstack Software Developer",
+    description:
+      "My team and I have built and are building several products from scratch all while maintaining a high standard of code quality.",
+    present: true,
+    startDate: new Date("2022-09-01"),
+    techStack: ["Angular", "TypeScript", ".Net7", "C#", "Storybook", "PrimeNG"],
+  },
+  {
+    ...defaultEntryValues,
     companyLogo: "/assets/au_standard_logo.jpg",
     companyName: "Aarhus University",
     position: "Student Mentor",
     description:
       "As a part-time student mentor I'm helping my mentees out with homework, understanding subjects, Uni-Life or everything in between. This has improven my sense of understanding issues and providing pedagogical explanations on tough subjects.",
-    present: true,
+    present: false,
     startDate: new Date("2021-02-01"),
+    endDate: new Date("2023-02-01"),
     techStackHeaderText: "Subjects that are usually mentioned",
     techStack: [
       "Software Architecture",

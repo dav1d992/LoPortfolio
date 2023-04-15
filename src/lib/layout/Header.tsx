@@ -23,7 +23,7 @@ const Header = () => {
             cursor="pointer"
             fontSize={["md", "xl"]}
           >
-            /dav1d992
+            /David Lo
           </Text>
         </Link>
         <Spacer />
