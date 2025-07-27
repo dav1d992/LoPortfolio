@@ -48,7 +48,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
         <HStack marginBottom={8}>
           <Image boxSize={16} objectFit="cover" src={entry.companyLogo} />
           <VStack alignItems="left">
-            <Heading size="md" fontSize={[13, 20]}>
+            <Heading size="md" fontSize={[13, 18]}>
               {entry.companyName}
               {entry.present && (
                 <Badge
@@ -63,7 +63,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
                 </Badge>
               )}
             </Heading>
-            <Heading size="sm" fontStyle={"italic"} fontSize={[11, 20]}>
+            <Heading size="sm" fontStyle={"italic"} fontSize={[11, 16]}>
               {entry.position}
             </Heading>
           </VStack>

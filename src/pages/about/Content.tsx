@@ -37,17 +37,16 @@ const Content = () => {
             <Button>Download CV</Button>
           </Link>
         </HStack>
-        <Text fontSize="xl">
-          I&apos;m David, currently working as a Fullstack Developer.
-        </Text>
-        <Text fontSize="xl">
-          Outside of work, I enjoy doing the usual stuff like eating sushi,
-          playing Counter Strike, <br></br> and{" "}
+        <Text fontSize="lg">
+          Outside of work, you’ll usually find me enjoying sushi, sharpening my
+          aim in games, smashing it at table tennis, lifting at the gym, or
+          hacking away on side projects. <br></br>
+          Every now and then, I’m out{" "}
           <Link href="https://www.instagram.com/realdavidlo/" isExternal>
-            <Text flexDirection={"row"} as="span" fontWeight="extrabold">
+            <Text as="span" fontWeight="extrabold" whiteSpace="nowrap">
               capturing moments 📸
             </Text>
-          </Link>
+          </Link>{" "}
         </Text>
       </MotionFlex>
       <Spacer />

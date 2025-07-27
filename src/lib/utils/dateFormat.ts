@@ -40,5 +40,6 @@ export const asYearAndMonth = (startDate: Date, endDate: Date) => {
   } else {
     month = endDate.getMonth() - startDate.getMonth();
   }
-  return `${year} years, ${month} months`
-}
+
+  return year === 0 ? `${month} months` : `${year} years, ${month} months`;
+};
