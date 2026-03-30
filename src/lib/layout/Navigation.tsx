@@ -1,7 +1,7 @@
 import { IconButton } from "@chakra-ui/react";
 import Link from "next/link";
 import type { IconType } from "react-icons";
-import { BsPencilSquare, BsHouse, BsFilePerson } from "react-icons/bs";
+import { BsPencilSquare, BsHouse, BsFilePerson, BsLaptop } from "react-icons/bs";
 
 type NavItemProps = {
   href: string;
@@ -39,6 +39,11 @@ const navigations: NavItemProps[] = [
     href: "/blog",
     label: "Blog",
     icon: BsPencilSquare,
+  },
+  {
+    href: "/projects",
+    label: "Projects",
+    icon: BsLaptop,
   },
   {
     href: "/about",
