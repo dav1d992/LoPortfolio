@@ -24,7 +24,7 @@ export const CareerList = ({
       initial="before"
       animate="after"
     >
-      <VStack spacing={4}>
+      <VStack gap={4}>
         {(useEducationTemplate &&
           listEntries.map((entry) => (
             <CareerListItem

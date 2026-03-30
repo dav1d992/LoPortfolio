@@ -1,18 +1,17 @@
 import { Box, Link as ChakraLink } from "@chakra-ui/react";
-import type { ReactNode } from "react";
-import type { Options } from "react-markdown/lib/ast-to-react";
+import type { Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import HeadingLink from "./HeadingLink";
 
-export const Renderers: Options["components"] = {
-  code: ({ node, inline, className, children, ...props }) => {
+export const Renderers: Components = {
+  code: ({ className, children, ...props }) => {
     /** https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight */
     const match = /language-(\w+)/.exec(className || "");
     const language = match?.[1];
     const childrenValue = String(children).replace(/\n$/, "");
-    return !inline && match ? (
+    return match ? (
       <Box marginBottom={10} marginTop={-5} width="100%">
         <SyntaxHighlighter
           language={language}
@@ -28,10 +27,15 @@ export const Renderers: Options["components"] = {
       </code>
     );
   },
-  link: ({ href, node }) => {
+  link: ({ href, children }) => {
     return (
-      <ChakraLink href={href} isExternal wordBreak="break-word">
-        {node.children[0].data as ReactNode}
+      <ChakraLink
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        wordBreak="break-word"
+      >
+        {children}
       </ChakraLink>
     );
   },

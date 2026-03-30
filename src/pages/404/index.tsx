@@ -18,10 +18,14 @@ const Page404 = () => {
         animate={{ y: 20 }}
         transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
       >
-        <Image src="https://http.cat/404" />
+        <Image src="https://http.cat/404" alt="404 cat illustration" />
       </MotionFlex>
       <Text textAlign="center" fontSize="xs">
-        <ChakraLink href="https://http.cat/404" isExternal></ChakraLink>
+        <ChakraLink
+          href="https://http.cat/404"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></ChakraLink>
       </Text>
 
       <Box marginY={4}>
@@ -30,7 +34,7 @@ const Page404 = () => {
         </Heading>
 
         <Box textAlign="center">
-          <Link href="/" passHref>
+          <Link href="/">
             <Button backgroundColor="buttonBackground">
               Let&apos;s Head Back
             </Button>

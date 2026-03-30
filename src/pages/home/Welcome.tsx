@@ -3,9 +3,9 @@ import {
   Heading,
   HStack,
   Text,
-  keyframes,
   Divider,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 
 import { motion } from "framer-motion";
 import MotionFlex from "../../lib/motion/MotionFlex";
@@ -41,7 +41,7 @@ const Welcome = () => {
           marginTop={[8, 0]}
           alignSelf={["none", "center"]}
         >
-          <HStack spacing={5} marginBottom={5}>
+          <HStack gap={5} marginBottom={5}>
             <Heading as="h1" size="3xl">
               Hello World!
             </Heading>

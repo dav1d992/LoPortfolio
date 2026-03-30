@@ -1,7 +1,7 @@
-import type { DeepPartial, Theme } from "@chakra-ui/react";
+import type { StyleFunctionProps } from "@chakra-ui/react";
 
-export const styles: DeepPartial<Theme["styles"]> = {
-  global: (props) => ({
+export const styles = {
+  global: (props: StyleFunctionProps) => ({
     /**
      * custom scrollbar
      * https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar#browser_compatibility

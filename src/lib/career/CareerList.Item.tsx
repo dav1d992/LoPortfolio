@@ -1,7 +1,7 @@
 import {
   Badge,
+  Box,
   Circle,
-  Collapse,
   Heading,
   HStack,
   Image,
@@ -44,9 +44,14 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
       overflow="hidden"
       paddingRight={3}
     >
-      <Collapse startingHeight={65} in={show} onClick={handleToggle}>
+      <Box onClick={handleToggle}>
         <HStack marginBottom={8}>
-          <Image boxSize={16} objectFit="cover" src={entry.companyLogo} />
+          <Image
+            boxSize={16}
+            objectFit="cover"
+            src={entry.companyLogo}
+            alt={`${entry.companyName} logo`}
+          />
           <VStack alignItems="left">
             <Heading size="md" fontSize={[13, 18]}>
               {entry.companyName}
@@ -79,29 +84,31 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
             )}
           </VStack>
         </HStack>
-        <VStack alignItems="left" marginLeft={3} marginBottom={3}>
-          <Text
-            fontSize={[12, 16]}
-            fontStyle={"italic"}
-          >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
-          <Text fontSize={[12, 16]} fontStyle={"italic"}>
-            {isToday(entry.endDate)
-              ? ""
-              : `To ${entry.endDate?.toLocaleDateString()}`}
-          </Text>
-          <Text marginBottom={8}>{entry.description}</Text>
-          <Heading size="sm">{techStackHeaderText}</Heading>
-          <SimpleGrid columns={2} spacingY={1}>
-            {entry.techStack &&
-              entry.techStack.map((tech) => (
-                <HStack key={tech}>
-                  <Circle size="5px" bg="brand.500" />
-                  <Text> {tech}</Text>
-                </HStack>
-              ))}
-          </SimpleGrid>
-        </VStack>
-      </Collapse>
+        {show ? (
+          <VStack alignItems="left" marginLeft={3} marginBottom={3}>
+            <Text
+              fontSize={[12, 16]}
+              fontStyle={"italic"}
+            >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
+            <Text fontSize={[12, 16]} fontStyle={"italic"}>
+              {isToday(entry.endDate)
+                ? ""
+                : `To ${entry.endDate?.toLocaleDateString()}`}
+            </Text>
+            <Text marginBottom={8}>{entry.description}</Text>
+            <Heading size="sm">{techStackHeaderText}</Heading>
+            <SimpleGrid columns={2} rowGap={1}>
+              {entry.techStack &&
+                entry.techStack.map((tech) => (
+                  <HStack key={tech}>
+                    <Circle size="5px" bg="brand.500" />
+                    <Text> {tech}</Text>
+                  </HStack>
+                ))}
+            </SimpleGrid>
+          </VStack>
+        ) : null}
+      </Box>
     </VStack>
   );
 };

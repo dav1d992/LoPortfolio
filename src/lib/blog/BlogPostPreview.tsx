@@ -17,8 +17,8 @@ const BlogPostPreview = ({ postData }: BlogPostPreviewProps) => {
         transform: "scale(1.03, 1.03)",
       }}
     >
-      <Link href={`/blog/${postData.id}`} passHref>
-        <Flex as="a" flexWrap="wrap" alignItems="center" width="100%">
+      <Link href={`/blog/${postData.id}`}>
+        <Flex flexWrap="wrap" alignItems="center" width="100%">
           <MotionFlex
             justifyContent="center"
             alignItems="center"
@@ -30,7 +30,12 @@ const BlogPostPreview = ({ postData }: BlogPostPreviewProps) => {
             animate="after"
           >
             <Box borderWidth={10} borderRadius="lg" borderColor="brand.400">
-              <Image boxSize={16} objectFit="cover" src={postData.imageUrl} />
+              <Image
+                boxSize={16}
+                objectFit="cover"
+                src={postData.imageUrl}
+                alt={postData.title}
+              />
             </Box>
 
             <Box flexBasis={["90%"]} paddingLeft={12}>

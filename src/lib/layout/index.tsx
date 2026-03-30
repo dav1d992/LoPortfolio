@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
         alignItems="center"
         position="relative"
         zIndex={1}
-        spacing={8}
+        gap={8}
       >
         <Box as="main" layerStyle="layoutBlock">
           {children}

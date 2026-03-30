@@ -16,10 +16,9 @@ const Header = () => {
       width="full"
     >
       <Flex layerStyle="layoutBlock" alignItems="center">
-        <Link href="/" passHref>
+        <Link href="/">
           <Text
             fontFamily={"Courier New"}
-            as="a"
             cursor="pointer"
             fontSize={["md", "xl"]}
           >

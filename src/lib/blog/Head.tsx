@@ -13,7 +13,7 @@ const BlogPostHead = ({ postData }: BlogPostHeadProps) => {
         <Heading as="h1" size="2xl" marginBottom={8}>
           {postData?.title}
         </Heading>
-        <Link href="/about" isExternal>
+        <Link href="/about">
           <Text>David Lo</Text>
         </Link>
 

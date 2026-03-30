@@ -1,5 +1,6 @@
 import { Heading, Link } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import type { HeadingProps } from "@chakra-ui/react";
 
 import { convertToId, convertToIdLink } from "../utils/convertToIdLink";
 
@@ -12,7 +13,7 @@ const HeadingLink = ({ children, heading }: HeadingLinkProps) => {
   const router = useRouter();
   const level = Number((heading ?? "h3").split("h")[1]);
 
-  const size: Record<number, string> = {
+  const size: Record<number, HeadingProps["size"]> = {
     1: "2xl",
     2: "xl",
     3: "lg",

@@ -16,9 +16,9 @@ const BlogPost = ({ postData }: BlogPostProps) => {
     <Box as="article">
       <BlogPostHead postData={postData} />
 
-      <ReactMarkdown className={styles.content} components={Renderers}>
-        {postData?.rawContent}
-      </ReactMarkdown>
+      <Box className={styles.content}>
+        <ReactMarkdown components={Renderers}>{postData?.rawContent}</ReactMarkdown>
+      </Box>
     </Box>
   );
 };

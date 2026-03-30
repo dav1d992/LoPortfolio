@@ -1,7 +1,6 @@
 import {
   Box,
   IconButton,
-  Tooltip,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -14,14 +13,13 @@ const ThemeToggle = () => {
 
   return (
     <Box>
-      <Tooltip label="theme toggle">
-        <IconButton
-          aria-label="toggle theme mode"
-          icon={toggleIcon}
-          onClick={toggleColorMode}
-          backgroundColor="transparent"
-        />
-      </Tooltip>
+      <IconButton
+        aria-label="toggle theme mode"
+        title="theme toggle"
+        icon={toggleIcon}
+        onClick={toggleColorMode}
+        backgroundColor="transparent"
+      />
     </Box>
   );
 };

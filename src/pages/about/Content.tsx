@@ -42,7 +42,11 @@ const Content = () => {
           aim in games, smashing it at table tennis, lifting at the gym, or
           hacking away on side projects. <br></br>
           Every now and then, I’m out{" "}
-          <Link href="https://www.instagram.com/realdavidlo/" isExternal>
+          <Link
+            href="https://www.instagram.com/realdavidlo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Text as="span" fontWeight="extrabold" whiteSpace="nowrap">
               capturing moments 📸
             </Text>
