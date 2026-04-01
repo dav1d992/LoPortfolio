@@ -32,7 +32,7 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
     }`;
 
   return (
-    <HStack
+    <VStack
       width={["80", "3xl"]}
       alignItems="stretch"
       spacing={0}
@@ -44,74 +44,75 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
       borderRadius="lg"
       overflow="hidden"
     >
-      <Image
-        boxSize={16}
-        objectFit="cover"
-        src={entry.companyLogo}
-        alt={`${entry.companyName} logo`}
-        alignSelf="flex-start"
-        borderRadius="md"
-        m={2}
-      />
-      <Box onClick={handleToggle} flex={1} p={2}>
-        <HStack>
-          <VStack alignItems="left">
-            <Heading size="md" fontSize={[13, 18]}>
-              {entry.companyName}
-              {entry.present && (
-                <Badge
-                  fontSize={[11, 20]}
-                  variant="outline"
-                  marginLeft={2}
-                  paddingLeft={1}
-                  paddingRight={1}
-                  paddingTop={0.5}
-                >
-                  Present
-                </Badge>
+      <HStack spacing={0} onClick={handleToggle} cursor="pointer">
+        <Image
+          boxSize={16}
+          objectFit="cover"
+          src={entry.companyLogo}
+          alt={`${entry.companyName} logo`}
+          borderRadius="md"
+          m={2}
+        />
+        <Box flex={1} p={2}>
+          <HStack>
+            <VStack alignItems="left">
+              <Heading size="md" fontSize={[13, 18]}>
+                {entry.companyName}
+                {entry.present && (
+                  <Badge
+                    fontSize={[11, 20]}
+                    variant="outline"
+                    marginLeft={2}
+                    paddingLeft={1}
+                    paddingRight={1}
+                    paddingTop={0.5}
+                  >
+                    Present
+                  </Badge>
+                )}
+              </Heading>
+              <Heading size="sm" fontStyle={"italic"} fontSize={[11, 16]}>
+                {entry.position}
+              </Heading>
+            </VStack>
+            <Spacer />
+            <VStack alignItems={"flex-end"}>
+              <Text display={["none", "flex"]} fontStyle={"italic"}>
+                {isEducation
+                  ? `${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
+                  : asYearAndMonth(entry.startDate, entry.endDate)}
+              </Text>
+              {(show && <MdExpandLess></MdExpandLess>) || (
+                <MdExpandMore></MdExpandMore>
               )}
-            </Heading>
-            <Heading size="sm" fontStyle={"italic"} fontSize={[11, 16]}>
-              {entry.position}
-            </Heading>
-          </VStack>
-          <Spacer />
-          <VStack alignItems={"flex-end"}>
-            <Text display={["none", "flex"]} fontStyle={"italic"}>
-              {isEducation
-                ? `${entry.startDate.getFullYear()} - ${entry.endDate.getFullYear()}`
-                : asYearAndMonth(entry.startDate, entry.endDate)}
-            </Text>
-            {(show && <MdExpandLess></MdExpandLess>) || (
-              <MdExpandMore></MdExpandMore>
-            )}
-          </VStack>
-        </HStack>
-        {show ? (
-          <VStack alignItems="left" marginLeft={3} marginBottom={3}>
-            <Text
-              fontSize={[12, 16]}
-              fontStyle={"italic"}
-            >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
-            <Text fontSize={[12, 16]} fontStyle={"italic"}>
-              {isToday(entry.endDate)
-                ? ""
-                : `To ${entry.endDate?.toLocaleDateString()}`}
-            </Text>
-            <Text marginBottom={8}>{entry.description}</Text>
-            <Heading size="sm">{techStackHeaderText}</Heading>
-            <SimpleGrid columns={2} rowGap={1}>
-              {entry.techStack &&
-                entry.techStack.map((tech) => (
-                  <HStack key={tech}>
-                    <Circle size="5px" bg="brand.500" />
-                    <Text> {tech}</Text>
-                  </HStack>
-                ))}
-            </SimpleGrid>
-          </VStack>
-        ) : null}
-      </Box>
-    </HStack>
+            </VStack>
+          </HStack>
+        </Box>
+      </HStack>
+      {show ? (
+        <VStack alignItems="left" width="100%" px={4} pb={3}>
+          <Text
+            fontSize={[12, 16]}
+            fontStyle={"italic"}
+          >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
+          <Text fontSize={[12, 16]} fontStyle={"italic"}>
+            {isToday(entry.endDate)
+              ? ""
+              : `To ${entry.endDate?.toLocaleDateString()}`}
+          </Text>
+          <Text marginBottom={8}>{entry.description}</Text>
+          <Heading size="sm">{techStackHeaderText}</Heading>
+          <SimpleGrid columns={2} rowGap={1}>
+            {entry.techStack &&
+              entry.techStack.map((tech) => (
+                <HStack key={tech}>
+                  <Circle size="5px" bg="brand.500" />
+                  <Text> {tech}</Text>
+                </HStack>
+              ))}
+          </SimpleGrid>
+        </VStack>
+      ) : null}
+    </VStack>
   );
 };
