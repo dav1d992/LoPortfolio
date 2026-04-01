@@ -32,9 +32,10 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
     }`;
 
   return (
-    <VStack
+    <HStack
       width={["80", "3xl"]}
-      alignItems="left"
+      alignItems="stretch"
+      spacing={0}
       transition="0.2s ease-out"
       _hover={{
         transform: "scale(1.02, 1.02)",
@@ -42,16 +43,18 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      paddingRight={3}
     >
-      <Box onClick={handleToggle}>
-        <HStack marginBottom={8}>
-          <Image
-            boxSize={16}
-            objectFit="cover"
-            src={entry.companyLogo}
-            alt={`${entry.companyName} logo`}
-          />
+      <Image
+        boxSize={16}
+        objectFit="cover"
+        src={entry.companyLogo}
+        alt={`${entry.companyName} logo`}
+        alignSelf="flex-start"
+        borderRadius="md"
+        m={2}
+      />
+      <Box onClick={handleToggle} flex={1} p={2}>
+        <HStack>
           <VStack alignItems="left">
             <Heading size="md" fontSize={[13, 18]}>
               {entry.companyName}
@@ -109,6 +112,6 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
           </VStack>
         ) : null}
       </Box>
-    </VStack>
+    </HStack>
   );
 };
