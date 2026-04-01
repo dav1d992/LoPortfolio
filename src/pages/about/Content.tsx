@@ -40,7 +40,7 @@ const Content = () => {
         <Text fontSize="lg">
           Outside of work, you’ll usually find me enjoying sushi, sharpening my
           aim in games, smashing it at table tennis, lifting at the gym, or
-          hacking away on side projects. <br></br>
+          hacking away on <Link href="/projects"><Text as="span" fontWeight="extrabold">side projects</Text></Link>. <br></br>
           Every now and then, I’m out{" "}
           <Link
             href="https://www.instagram.com/realdavidlo/"
