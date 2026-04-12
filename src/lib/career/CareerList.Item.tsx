@@ -11,7 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { asYearAndMonth, isToday } from "../utils/dateFormat";
+import { asDayMonthYear, asYearAndMonth, isToday } from "../utils/dateFormat";
 import { CareerEntry } from "./careerEntries";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 
@@ -94,11 +94,9 @@ export const CareerListItem = ({ entry, isEducation }: CareerListItemProps) => {
           <Text
             fontSize={[12, 16]}
             fontStyle={"italic"}
-          >{`From ${entry.startDate.toLocaleDateString()}`}</Text>
+          >{`From ${asDayMonthYear(entry.startDate)}`}</Text>
           <Text fontSize={[12, 16]} fontStyle={"italic"}>
-            {isToday(entry.endDate)
-              ? ""
-              : `To ${entry.endDate?.toLocaleDateString()}`}
+            {isToday(entry.endDate) ? "" : `To ${asDayMonthYear(entry.endDate)}`}
           </Text>
           <Text marginBottom={8}>{entry.description}</Text>
           <Heading size="sm">{techStackHeaderText}</Heading>

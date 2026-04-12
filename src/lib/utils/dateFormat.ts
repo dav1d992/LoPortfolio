@@ -43,3 +43,11 @@ export const asYearAndMonth = (startDate: Date, endDate: Date) => {
 
   return year === 0 ? `${month} months` : `${year} years, ${month} months`;
 };
+
+export const asDayMonthYear = (date: Date) => {
+  const day = `${date.getDate()}`.padStart(2, "0");
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+};
